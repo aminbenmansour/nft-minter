@@ -43,3 +43,11 @@ function getRandomName() {
         return name;
     }
 }
+
+function getLayer(name, skip=0.0) {
+    const svg = readFileSync(`./layers/${name}.svg`, 'utf-8');
+    const re = /(?<=\<svg\s*[^>]*>)([\s\S]*?)(?=\<\/svg\>)/g
+    const layer = svg.match(re)[0];
+    return Math.random() > skip ? layer : '';
+}
+

@@ -12,3 +12,12 @@ const template = `
         <!-- beard -->
     </svg>
 `
+// get a random number
+function randInt(max) {
+    return Math.floor(Math.random() * (max + 1));
+}
+
+// get a random elemnt from array
+function randElement(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}

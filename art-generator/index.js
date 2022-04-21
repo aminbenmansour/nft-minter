@@ -108,3 +108,13 @@ function createImage(idx) {
     }
 
 }
+
+
+// create dir if not exists
+if (!existsSync('./out')){
+    mkdirSync('./out');
+}
+
+// cleanup dir before each run
+readdirSync('./out').forEach(f => rmSync(`./out/${f}`));
+

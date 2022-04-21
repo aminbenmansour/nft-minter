@@ -14,6 +14,8 @@ const template = `
 `
 
 const takenNames = {};
+const takenFaces = {};
+let idx = 999;
 
 // get a random number
 function randInt(max) {
@@ -60,3 +62,33 @@ async function svgToPng(name) {
     await resized.toFile(dest);
 }
 
+
+function createImage(idx) {
+
+    const bg = randInt(5);
+    const hair = randInt(7);
+    const eyes = randInt(9);
+    const nose = randInt(4); 
+    const mouth = randInt(5);
+    const beard = randInt(3);
+    // 18,900 combinations
+
+    const face = [hair, eyes, mouth, nose, beard].join('');
+
+    if (face[takenFaces]) {
+        createImage();
+    } else {
+        const name = getRandomName()
+        console.log(name)
+        face[takenFaces] = face;
+
+        const final = template
+            .replace('<!-- bg -->', getLayer(`bg${bg}`))
+            .replace('<!-- head -->', getLayer('head0'))
+            .replace('<!-- hair -->', getLayer(`hair${hair}`))
+            .replace('<!-- eyes -->', getLayer(`eyes${eyes}`))
+            .replace('<!-- nose -->', getLayer(`nose${nose}`))
+            .replace('<!-- mouth -->', getLayer(`mouth${mouth}`))
+            .replace('<!-- beard -->', getLayer(`beard${beard}`, 0.5))
+    }
+}

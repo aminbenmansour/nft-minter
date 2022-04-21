@@ -51,3 +51,12 @@ function getLayer(name, skip=0.0) {
     return Math.random() > skip ? layer : '';
 }
 
+async function svgToPng(name) {
+    const src = `./out/${name}.svg`;
+    const dest = `./out/${name}.png`;
+
+    const img = await sharp(src);
+    const resized = await img.resize(1024);
+    await resized.toFile(dest);
+}
+

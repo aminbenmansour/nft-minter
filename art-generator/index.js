@@ -118,3 +118,7 @@ if (!existsSync('./out')){
 // cleanup dir before each run
 readdirSync('./out').forEach(f => rmSync(`./out/${f}`));
 
+do {
+    createImage(idx);
+    idx--;
+} while (idx >= 0);

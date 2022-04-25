@@ -8,8 +8,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^4.5.0",
+    "ether.js": "^1.0.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "waffle": "^0.0.4"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",

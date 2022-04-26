@@ -11,6 +11,8 @@ contract UnsatiableGuy is ERC721, ERC721URIStorage, Ownable {
 
     Counters.Counter private _tokenIdCounter;
 
+    mapping(string => uint8) existingURIs;
+
     constructor() ERC721("UnsatiableGuy", "UTG") {}
 
     function safeMint(address to, string memory uri) public onlyOwner {
@@ -34,4 +36,9 @@ contract UnsatiableGuy is ERC721, ERC721URIStorage, Ownable {
     {
         return super.tokenURI(tokenId);
     }
+
+    function isContentOwned(string memory _uri) public returns (bool) {
+        return existingURIs[_uri] == 1;
+    }
+
 }

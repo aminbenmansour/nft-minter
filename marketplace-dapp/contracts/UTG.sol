@@ -48,6 +48,11 @@ contract UnsatiableGuy is ERC721, ERC721URIStorage, Ownable {
             require(existingURIs[_metadataURI] != 1, "NFT already minted");
             require(msg.value >= 0.5 ether, "Need to pay up");
 
+            uint256 newItemId = _tokenIdCounter.current();
+            _tokenIdCounter.increment();
+
+            _mint(recipient, newItemId);
+            _setTokenURI(newItemId, _metadataURI);
         }
 
 }

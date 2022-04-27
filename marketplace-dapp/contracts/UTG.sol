@@ -53,6 +53,8 @@ contract UnsatiableGuy is ERC721, ERC721URIStorage, Ownable {
 
             _mint(recipient, newItemId);
             _setTokenURI(newItemId, _metadataURI);
+
+            existingURIs[_metadataURI] == 1;
         }
 
 }

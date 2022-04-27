@@ -41,4 +41,11 @@ contract UnsatiableGuy is ERC721, ERC721URIStorage, Ownable {
         return existingURIs[_uri] == 1;
     }
 
+    function payToMint(
+        address recipient,
+        string memory _metadataURI
+        ) public payable returns (uint256) {
+            
+        }
+
 }

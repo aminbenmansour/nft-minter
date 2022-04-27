@@ -45,7 +45,8 @@ contract UnsatiableGuy is ERC721, ERC721URIStorage, Ownable {
         address recipient,
         string memory _metadataURI
         ) public payable returns (uint256) {
-            
+            require(existingURIs[_metadataURI] != 1, "NFT already minted");
+
         }
 
 }

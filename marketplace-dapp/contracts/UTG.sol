@@ -37,8 +37,8 @@ contract UnsatiableGuy is ERC721, ERC721URIStorage, Ownable {
         return super.tokenURI(tokenId);
     }
 
-    function isContentOwned(string memory _uri) public returns (bool) {
-        return existingURIs[_uri] == 1;
+    function isContentOwned(string memory uri) public view returns (bool) {
+        return existingURIs[uri] == 1;
     }
 
     function payToMint(

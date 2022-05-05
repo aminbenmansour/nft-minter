@@ -14,7 +14,7 @@ describe("UTG", function() {
     let balance = await nerdGuy.balanceOf(recipient);
     expect(balance).to.equal(0);
 
-    const newlyMintedToken = await nerdGuy.payToMint(recipient, metadataURI, {value: ethers.utils.parseEther('0.05') });
+    const newlyMintedToken = await nerdGuy.payToMint(recipient, metadataURI, {value: ethers.utils.parseEther('0.5') });
 
     // wait until the transaction is mined
     await newlyMintedToken.wait();

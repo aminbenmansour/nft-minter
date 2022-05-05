@@ -74,8 +74,8 @@
       ]
     },
     "/home/amin/Documents/nft-marketplace/marketplace-dapp/contracts/UTG.sol": {
-      "lastModificationDate": 1651709787822,
-      "contentHash": "42ef0e98d77282baf8a8eee3ac34c6e9",
+      "lastModificationDate": 1651714832271,
+      "contentHash": "1c42b971650ffb5c18995d32231c719d",
       "sourceName": "contracts/UTG.sol",
       "solcConfig": {
         "version": "0.8.4",

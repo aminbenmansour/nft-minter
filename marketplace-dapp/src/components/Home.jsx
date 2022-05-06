@@ -1,4 +1,7 @@
+import WalletBalance from './WalletBalance';
+
 import NerdGuy from '../artifacts/contracts/UTG.sol/UnsatiableGuy.json';
+
 import { ethers } from 'ethers';
 
 const Home = () => {

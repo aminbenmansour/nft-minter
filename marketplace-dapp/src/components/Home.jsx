@@ -10,6 +10,11 @@ const Home = () => {
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
 
+    // get the end user (execute transactions)
+    const signer = provider.getSigner();
+
+    // get the smart contract
+    const contract = new ethers.Contract(contractAddress, NerdGuy.abi, signer);
 
     return (
         <div>

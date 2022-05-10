@@ -83,18 +83,17 @@ function NFTImage({ tokenId, getCount }) {
     return (
         <div>
             <img src={isMinted ? imageURI : 'img/placeholder.png'}></img>
-
-            {!isMinted ? (
-                <button onClick={mintToken}>
-                    Mint
-                </button>
-            ) : (
-                <button onClick={getURI}>
-                    Taken! Show URI
-                </button>
-            )}
             <div>
-
+                <h5>ID #{tokenId}</h5>
+                {!isMinted ? (
+                    <button onClick={mintToken}>
+                        Mint
+                    </button>
+                ) : (
+                    <button onClick={getURI}>
+                        Taken! Show URI
+                    </button>
+                )}
             </div>
         </div>
     )

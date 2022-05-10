@@ -15,7 +15,7 @@ const signer = provider.getSigner();
 // get the smart contract
 const contract = new ethers.Contract(contractAddress, NerdGuy.abi, signer);
 
-const Home = () => {
+const Home = async () => {
 
     const [totalMinted, setTotalMinted] = useState(0);
 

@@ -46,8 +46,15 @@ const Home = () => {
 function NFTImage({ tokenId, getCount }) {
     const contentId = "QmPr1xJmWAjFwP5iXoFcnbrARmLLXbNAWBKYizykhXAQP3";
     const metadatURI = `${contentId}/${tokenId}.json`;
-    const imageURI = `https://gateway.pinata.cloud/ipfs/${contentId}/${tokenId}.png`
-    
+    const imageURI = `https://gateway.pinata.cloud/ipfs/${contentId}/${tokenId}.png`;
+
+    const [isMinted, setIsMinted] = useState(false);
+
+    const getMintedStatus = async () => {
+        const result = await contract.isContentOwned(metadatURI);
+        setIsMinted(result);
+    };
+
 }
 
 export default Home;

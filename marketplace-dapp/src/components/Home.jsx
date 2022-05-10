@@ -26,7 +26,7 @@ const Home = () => {
         <div>
             <WalletBalance />
 
-            <h1>Fired Guys NFT Collection</h1>
+            <h1>Nerd Guys NFT Collection</h1>
             <div className="container">
                 <div className="row">
                     {

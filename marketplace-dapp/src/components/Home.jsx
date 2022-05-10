@@ -39,7 +39,7 @@ const Home = () => {
                     {
                         Array(totalMinted + 1).fill(0).map((_, i) => (
                             <div>
-                                <NFTImage tokenId={i} />
+                                <NFTImage tokenId={i} getCount={getCount} />
                             </div>
                         ))
                     }
@@ -81,6 +81,7 @@ function NFTImage({ tokenId, getCount }) {
 
         await result.wait();
         getMintedStatus();
+        getCount();
     };
 
     async function getURI() {

@@ -76,6 +76,10 @@ function NFTImage({ tokenId, getCount }) {
         getMintedStatus();
     };
 
+    async function getURI() {
+        const uri = await contract.tokenURI(tokenId);
+    }
+
 }
 
 export default Home;

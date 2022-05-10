@@ -50,6 +50,10 @@ function NFTImage({ tokenId, getCount }) {
 
     const [isMinted, setIsMinted] = useState(false);
 
+    useEffect(() => {
+        getMintedStatus()
+    }, [isMinted]);
+    
     const getMintedStatus = async () => {
         const result = await contract.isContentOwned(metadatURI);
         setIsMinted(result);

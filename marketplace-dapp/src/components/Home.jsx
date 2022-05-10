@@ -80,6 +80,25 @@ function NFTImage({ tokenId, getCount }) {
         const uri = await contract.tokenURI(tokenId);
     }
 
+    return (
+        <div>
+            <img src={isMinted ? imageURI : 'img/placeholder.png'}></img>
+
+            {!isMinted ? (
+                <button onClick={mintToken}>
+                    Mint
+                </button>
+            ) : (
+                <button onClick={getURI}>
+                    Taken! Show URI
+                </button>
+            )}
+            <div>
+
+            </div>
+        </div>
+    )
+
 }
 
 export default Home;

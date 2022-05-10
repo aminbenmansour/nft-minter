@@ -58,7 +58,7 @@ function NFTImage({ tokenId, getCount }) {
     const [isMinted, setIsMinted] = useState(false);
 
     useEffect(() => {
-        getMintedStatus()
+        getMintedStatus();
     }, [isMinted]);
 
     const getMintedStatus = async () => {

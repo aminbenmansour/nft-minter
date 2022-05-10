@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 
 import WalletBalance from './WalletBalance';
@@ -19,8 +19,15 @@ const Home = () => {
 
     const [totalMinted, setTotalMinted] = useState(0);
 
-    const count = await contract.count();
-    setTotalMinted(parseInt(count))
+    useEffect(() => {
+        getCount();
+    }, []);
+    
+    
+    const getCount = async () => {
+        const count = await contract.count();
+        setTotalMinted(parseInt(count));
+    };
 
     return (
         <div>

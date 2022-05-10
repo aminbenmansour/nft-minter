@@ -53,10 +53,27 @@ function NFTImage({ tokenId, getCount }) {
     useEffect(() => {
         getMintedStatus()
     }, [isMinted]);
-    
+
     const getMintedStatus = async () => {
         const result = await contract.isContentOwned(metadatURI);
         setIsMinted(result);
+    };
+
+
+    const mintToken = async () => {
+
+        // making connection between the contract and the signer
+        const connection = contract.connect(signer);
+
+        // getting access to the recipient wallet address
+        const addr = connection.address;
+
+        const result = await contract.payToMint(addr, metadataURI, {
+            value: ethers.utils.parseEther('0.5'),
+        });
+
+        await result.wait();
+        getMintedStatus();
     };
 
 }

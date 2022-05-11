@@ -21,6 +21,8 @@ npx hardhat run scripts/deploy.js --network localhost
 ```
 
 * running the frontend application
+
+Update the deployed contract address in `src/components/Home.js`
 ```
 npm run dev
 ```

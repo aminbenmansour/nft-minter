@@ -26,3 +26,9 @@ Update the deployed contract address in `src/components/Home.js`
 ```
 npm run dev
 ```
+
+## Structure
+This project is divided into two main parts `art-generator` and `marketplace-dapp`.
+* `art-generator`:
+  * getting layers in input and generates a random unique pictures.
+* `marketplace-dapp`:

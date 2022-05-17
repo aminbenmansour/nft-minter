@@ -19,7 +19,7 @@ async function main() {
 
   await unsatiableGuy.deployed();
 
-  console.log("Greeter deployed to:", unsatiableGuy.address);
+  console.log("UnsatiableGuy deployed to:", unsatiableGuy.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

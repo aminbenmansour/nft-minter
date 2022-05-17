@@ -22,8 +22,8 @@ const Home = async () => {
     useEffect(() => {
         getCount();
     }, []);
-    
-    
+
+
     const getCount = async () => {
         const count = await contract.count();
         setTotalMinted(parseInt(count));
@@ -37,15 +37,16 @@ const Home = async () => {
             <div className="container">
                 <div className="row">
                     {
-                        Array(totalMinted + 1).fill(0).map((_, i) => (
-                            <div>
-                                <NFTImage tokenId={i} getCount={getCount} />
-                            </div>
-                        ))
+                        Array(totalMinted + 1)
+                            .fill(0)
+                            .map((_, i) => (
+                                <div key={i} className="col-sm">
+                                    <NFTImage tokenId={i} getCount={getCount} />
+                                </div>
+                            ))
                     }
                 </div>
             </div>
-
         </div>
     );
 }

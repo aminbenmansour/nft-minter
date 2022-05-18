@@ -7,7 +7,7 @@ import UnsatiableGuy from '../artifacts/contracts/UTG.sol/UnsatiableGuy.json';
 
 import { Container, Card, Grid, Spacer, Image, Button, Text} from "@nextui-org/react";
 
-const contractAddress = '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9';
+const contractAddress = '0x92F5405A6c1395D79111bF4369Cd2a2F2BD3ad3F';
 
 const provider = new ethers.providers.Web3Provider(window.ethereum);
 

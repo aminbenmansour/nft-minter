@@ -27,11 +27,17 @@ module.exports = {
     artifacts: "./src/artifacts",
   },
   networks: {
-    ropsten: {
-      url: process.env.ROPSTEN_URL || "",
-      accounts:
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    // ropsten: {
+    //   url: process.env.ROPSTEN_URL || "",
+    //   accounts:
+    //     process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    // },
+
+    matic: {
+      url: "https://polygon-mumbai.g.alchemy.com/v2/kCOKIjZx5veunlU0O71lLMNNCMzsufg2",
+      accounts: ["ac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"],
     },
+
   },
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,

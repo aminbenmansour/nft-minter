@@ -5,7 +5,7 @@ import WalletBalance from './WalletBalance';
 import UnsatiableGuy from '../artifacts/contracts/UTG.sol/UnsatiableGuy.json';
 
 
-import { Container, Card, Grid, Spacer, Button, Text} from "@nextui-org/react";
+import { Container, Card, Grid, Spacer, Image, Button, Text} from "@nextui-org/react";
 
 const contractAddress = '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9';
 
@@ -98,10 +98,10 @@ function NFTImage({ tokenId, getCount }) {
     }
 
     return (
-        <div>
-            <img src={isMinted ? imageURI : 'img/placeholder.png'}></img>
+        <Card bordered>
+            <img width={200} height={200}  src={isMinted ? imageURI : 'img/placeholder.png'} />
             <div>
-                <h5>ID #{tokenId}</h5>
+                <Text h5>ID #{tokenId}</Text>
                 {!isMinted ? (
                     <Button onClick={mintToken}>
                         Mint
@@ -112,7 +112,7 @@ function NFTImage({ tokenId, getCount }) {
                     </Button>
                 )}
             </div>
-        </div>
+        </Card>
     )
 
 }

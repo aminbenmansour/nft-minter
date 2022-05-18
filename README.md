@@ -1,5 +1,8 @@
 # nft-marketplace
 
+programatically generate NFTs from layers and minting them through a wallet on the ethereum through a smart contract inheriting the ERC-721 standard.
+The contract is deployed to the polygon network (mumbai testnet) with alchemy and we can see our smart-contract in production.
+
 ## Usage
 in `marketplace-dapp` folder, execute the following commands.
 * install dependencies

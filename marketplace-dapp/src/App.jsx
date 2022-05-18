@@ -9,13 +9,13 @@ const App = () => {
 
     return (
       <NextUIProvider>
-        <Home />;
+        <Home />
       </NextUIProvider>
     );
   } else {
     return (
       <NextUIProvider>
-        <Install />;
+        <Install />
       </NextUIProvider>
     );
   }

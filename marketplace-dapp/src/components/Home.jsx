@@ -5,6 +5,8 @@ import WalletBalance from './WalletBalance';
 import UnsatiableGuy from '../artifacts/contracts/UTG.sol/UnsatiableGuy.json';
 
 
+import { Container, Card, Grid, Spacer, Button, Text} from "@nextui-org/react";
+
 const contractAddress = '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9';
 
 const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -30,24 +32,27 @@ const Home = () => {
     };
 
     return (
-        <div>
+        <Container>
+            <Spacer y={1} />
             <WalletBalance />
-
-            <h1>Unsatiable Guys NFT Collection</h1>
-            <div className="container">
-                <div className="row">
-                    {
-                        Array(totalMinted + 1)
-                            .fill(0)
-                            .map((_, i) => (
-                                <div key={i} className="col-sm">
-                                    <NFTImage tokenId={i} getCount={getCount} />
-                                </div>
-                            ))
-                    }
+            <Spacer y={2} />
+            <Card bordered shadow={false} justify="center">
+                <Text h1 style={{textAlign: "center"}}>Unsatiable Guys NFT Collection</Text>
+                <div className="container">
+                    <div className="row">
+                        {
+                            Array(totalMinted + 1)
+                                .fill(0)
+                                .map((_, i) => (
+                                    <div key={i} className="col-sm">
+                                        <NFTImage tokenId={i} getCount={getCount} />
+                                    </div>
+                                ))
+                        }
+                    </div>
                 </div>
-            </div>
-        </div>
+            </Card>
+        </Container>
     );
 }
 
@@ -55,10 +60,10 @@ function NFTImage({ tokenId, getCount }) {
     const contentId = "QmPr1xJmWAjFwP5iXoFcnbrARmLLXbNAWBKYizykhXAQP3";
     // const metadataURI = `${contentId}/${tokenId}.json`;
     // const imageURI = `https://gateway.pinata.cloud/ipfs/${contentId}/${tokenId}.png`;
-    
+
     const metadataURI = `img/${tokenId}.json`;
     const imageURI = `img/${tokenId}.png`;
-    
+
     const [isMinted, setIsMinted] = useState(false);
 
     useEffect(() => {
@@ -98,13 +103,13 @@ function NFTImage({ tokenId, getCount }) {
             <div>
                 <h5>ID #{tokenId}</h5>
                 {!isMinted ? (
-                    <button onClick={mintToken}>
+                    <Button onClick={mintToken}>
                         Mint
-                    </button>
+                    </Button>
                 ) : (
-                    <button onClick={getURI}>
+                    <Button onClick={getURI}>
                         Taken! Show URI
-                    </button>
+                    </Button>
                 )}
             </div>
         </div>

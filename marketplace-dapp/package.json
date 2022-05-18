@@ -11,6 +11,7 @@
     "@nextui-org/react": "^1.0.0-beta.7",
     "@openzeppelin/contracts": "^4.5.0",
     "ether.js": "^1.0.0",
+    "next-themes": "^0.2.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "waffle": "^0.0.4"

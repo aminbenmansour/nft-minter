@@ -1,11 +1,23 @@
 import Home from "./components/Home";
 import Install from "./components/Install";
 
+
+import { NextUIProvider } from '@nextui-org/react';
+
 const App = () => {
-  if(window.ethereum) {
-    return <Home />;
+  if (window.ethereum) {
+
+    return (
+      <NextUIProvider>
+        <Home />;
+      </NextUIProvider>
+    );
   } else {
-    return <Install />;
+    return (
+      <NextUIProvider>
+        <Install />;
+      </NextUIProvider>
+    );
   }
 }
 

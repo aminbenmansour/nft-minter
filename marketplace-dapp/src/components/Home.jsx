@@ -5,7 +5,7 @@ import WalletBalance from './WalletBalance';
 import UnsatiableGuy from '../artifacts/contracts/UTG.sol/UnsatiableGuy.json';
 
 
-const contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+const contractAddress = '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9';
 
 const provider = new ethers.providers.Web3Provider(window.ethereum);
 
@@ -80,7 +80,7 @@ function NFTImage({ tokenId, getCount }) {
         const addr = connection.address;
 
         const result = await contract.payToMint(addr, metadataURI, {
-            value: ethers.utils.parseEther('0.5'),
+            value: ethers.utils.parseEther('0.05'),
         });
 
         await result.wait();

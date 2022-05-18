@@ -34,13 +34,6 @@ const App = () => {
         }}
       >
         <NextUIProvider>
-          <div>
-            The current theme is: {type}
-            <Switch
-              checked={isDark}
-              onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
-            />
-          </div>
           <Home />
         </NextUIProvider>
       </NextThemesProvider >

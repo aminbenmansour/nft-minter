@@ -38,4 +38,6 @@ This project is divided into two main parts `art-generator` and `marketplace-dap
   * developing a product-ready smart-contract with OpenZeppelin to mint NFTs previously deployed to IPFS.
   * deploying the ERC-721 token with ALCHEMY.
 
+## Stack
 
+The following technologies were used to build this application:
